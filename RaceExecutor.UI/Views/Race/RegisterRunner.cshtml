@@ -1,0 +1,159 @@
+﻿@model RaceExecutor.UI.Models.RegisterViewModel
+
+@{
+    ViewBag.Title = "RegisterRunner";
+}
+
+<div class="row bg-title">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h4 class="page-title">Registered Runners</h4>
+    </div>
+    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+        <a href="@Url.Action("Export","Race")" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">
+            Export New-Register Sample
+        </a>
+        <ol class="breadcrumb">
+            <li><a href="#">Trail Race</a></li>
+            <li class="active">Export Registration Sample</li>
+        </ol>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+@if (TempData["Fail"] != null)
+{
+    <p class="alert alert-danger" style="color:white;" id="failMessage">@TempData["Fail"]</p>
+}
+@if (TempData["Success"] != null)
+{
+    <p class="alert alert-info" style="color:white;" id="failMessage">@TempData["Success"]</p>
+}
+<div class=" col-md-12 white-box" style="padding-bottom:0px;">
+    @using (Html.BeginForm("ExcelImportForRegister", "Race", FormMethod.Post, new { area = "", @class = "form-horizontal", enctype = "multipart/form-data" }))
+    {
+        <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+            @Html.TextBoxFor(model => model.FileName, "", new { @type = "file", @multiple = "multiple" })
+            @*<input type="file" id="dataFile" name="upload"/>*@
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-3 col-md-3 col-sm-12 col-xs-12 form-group">
+                <input type="submit" value="Check-Point Excel Import" class="btn btn-primary" />
+            </div>
+            <div class="col-md-offset-6 col-md-6 col-sm-12 col-xs-12 form-group">
+                <h5>Note: Excel data should be upto  minimum 15 rows.</h5>
+            </div>
+        </div>
+    }
+
+</div>
+
+<div class="row bg-title white-box">
+    @using (Html.BeginForm("RegisterRunner", "Race", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.BIBCode, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.BIBCode, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter BIB Code.." } })
+                    @Html.ValidationMessageFor(model => model.BIBCode, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Runner name.." } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter First Name(Optional).." } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MiddleName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Middle Name(Optional).." } })
+                    @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Last Name(Optional).." } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Age.." } })
+                    @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Gender.." } })
+                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DateOfBirth, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Date Of Birth(Optional).." } })
+                    @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Phone Number.." } })
+                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Email.." } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Distance, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.Distance, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Distance.." } })
+                    @Html.ValidationMessageFor(model => model.Distance, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.StartTime, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.StartTime, new { htmlAttributes = new { @class = "form-control",  @placeholder = "Enter Distance.." } })
+                        @Html.ValidationMessageFor(model => model.StartTime, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-8">
+                    <input type="submit" value="Create" class="btn btn-primary btn-block" />
+                </div>
+            </div>
+        </div>
+    }
+</div>

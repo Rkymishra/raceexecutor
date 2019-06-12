@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TrailRaceNepalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CheckPost">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BIBCode" Type="nvarchar" MaxLength="256" />
+    <Property Name="EndTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CheckStation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BIBCode" Type="int" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="Station" Type="bigint" />
+    <Property Name="StationName" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Races">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RaceName" Type="nvarchar(max)" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Location" Type="nvarchar(max)" />
+    <Property Name="Sponsers" Type="nvarchar(max)" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Register">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BIBCode" Type="bigint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="256" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="256" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Age" Type="nvarchar" MaxLength="256" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="128" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="Distance" Type="int" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="RaceId" Type="bigint" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="256" />
+    <Property Name="SeasonPass" Type="nvarchar" MaxLength="256" />
+    <Property Name="TeamName" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Stations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StationName" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="TimeInterval">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BIBCode" Type="bigint" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="Interval" Type="time" Precision="7" />
+    <Property Name="Rank" Type="int" />
+    <Property Name="RaceId" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TrailRaceNepal.dbo.View17andBelowFemaleRankedList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View17andBelowFemaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="BIBCode" Type="nvarchar" MaxLength="256" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Age" Type="nvarchar" MaxLength="256" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Distance" Type="int" />
+    <Property Name="Interval" Type="time" Precision="7" />
+    <Property Name="RANK" Type="bigint" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="RaceId" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TrailRaceNepal.dbo.View17andBelowMaleRankedList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View17andBelowMaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="BIBCode" Type="nvarchar" MaxLength="256" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Age" Type="nvarchar" MaxLength="256" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Distance" Type="int" />
+    <Property Name="Interval" Type="time" Precision="7" />
+    <Property Name="RANK" Type="bigint" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="RaceId" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TrailRaceNepal.dbo.View18to39FemaleRankedList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View18to39FemaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="BIBCode" Type="nvarchar" MaxLength="256" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Age" Type="nvarchar" MaxLength="256" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Distance" Type="int" />
+    <Property Name="Interval" Type="time" Precision="7" />
+    <Property Name="RANK" Type="bigint" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="RaceId" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TrailRaceNepal.dbo.View18to39MaleRankedList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View18to39MaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="BIBCode" Type="nvarchar" MaxLength="256" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Age" Type="nvarchar" MaxLength="256" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Distance" Type="int" />
+    <Property Name="Interval" Type="time" Precision="7" />
+    <Property Name="RANK" Type="bigint" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="RaceId" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TrailRaceNepal.dbo.View40andAboveFemaleRankedList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View40andAboveFemaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="BIBCode" Type="nvarchar" MaxLength="256" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Age" Type="nvarchar" MaxLength="256" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Distance" Type="int" />
+    <Property Name="Interval" Type="time" Precision="7" />
+    <Property Name="RANK" Type="bigint" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="RaceId" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TrailRaceNepal.dbo.View40andAboveMaleRankedList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View40andAboveMaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="BIBCode" Type="nvarchar" MaxLength="256" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Age" Type="nvarchar" MaxLength="256" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Distance" Type="int" />
+    <Property Name="Interval" Type="time" Precision="7" />
+    <Property Name="RANK" Type="bigint" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="RaceId" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TrailRaceNepal.dbo.View8andBelowFemaleRankedList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View8andBelowFemaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="BIBCode" Type="nvarchar" MaxLength="256" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Age" Type="nvarchar" MaxLength="256" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Distance" Type="int" />
+    <Property Name="Interval" Type="time" Precision="7" />
+    <Property Name="RANK" Type="bigint" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="RaceId" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TrailRaceNepal.dbo.View8andBelowMaleRankedList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View8andBelowMaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="BIBCode" Type="nvarchar" MaxLength="256" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Age" Type="nvarchar" MaxLength="256" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Distance" Type="int" />
+    <Property Name="Interval" Type="time" Precision="7" />
+    <Property Name="RANK" Type="bigint" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="RaceId" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TrailRaceNepal.dbo.ViewOverAllFemaleRankedList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewOverAllFemaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="BIBCode" Type="nvarchar" MaxLength="256" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Age" Type="nvarchar" MaxLength="256" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Distance" Type="int" />
+    <Property Name="Interval" Type="time" Precision="7" />
+    <Property Name="RANK" Type="bigint" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="RaceId" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TrailRaceNepal.dbo.ViewOverAllMaleRankedList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewOverAllMaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="BIBCode" Type="nvarchar" MaxLength="256" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Age" Type="nvarchar" MaxLength="256" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Distance" Type="int" />
+    <Property Name="Interval" Type="time" Precision="7" />
+    <Property Name="RANK" Type="bigint" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="RaceId" Type="bigint" />
+  </EntityType>
+  <EntityContainer Name="TrailRaceNepalModelStoreContainer">
+    <EntitySet Name="CheckPost" EntityType="Self.CheckPost" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CheckStation" EntityType="Self.CheckStation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Races" EntityType="Self.Races" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Register" EntityType="Self.Register" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stations" EntityType="Self.Stations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TimeInterval" EntityType="Self.TimeInterval" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="View17andBelowFemaleRankedList" EntityType="Self.View17andBelowFemaleRankedList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View17andBelowFemaleRankedList].[Id] AS [Id], 
+    [View17andBelowFemaleRankedList].[BIBCode] AS [BIBCode], 
+    [View17andBelowFemaleRankedList].[Name] AS [Name], 
+    [View17andBelowFemaleRankedList].[Age] AS [Age], 
+    [View17andBelowFemaleRankedList].[Gender] AS [Gender], 
+    [View17andBelowFemaleRankedList].[Distance] AS [Distance], 
+    [View17andBelowFemaleRankedList].[Interval] AS [Interval], 
+    [View17andBelowFemaleRankedList].[RANK] AS [RANK], 
+    [View17andBelowFemaleRankedList].[StartTime] AS [StartTime], 
+    [View17andBelowFemaleRankedList].[Email] AS [Email], 
+    [View17andBelowFemaleRankedList].[EndTime] AS [EndTime], 
+    [View17andBelowFemaleRankedList].[RaceId] AS [RaceId]
+    FROM [dbo].[View17andBelowFemaleRankedList] AS [View17andBelowFemaleRankedList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View17andBelowMaleRankedList" EntityType="Self.View17andBelowMaleRankedList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View17andBelowMaleRankedList].[Id] AS [Id], 
+    [View17andBelowMaleRankedList].[BIBCode] AS [BIBCode], 
+    [View17andBelowMaleRankedList].[Name] AS [Name], 
+    [View17andBelowMaleRankedList].[Age] AS [Age], 
+    [View17andBelowMaleRankedList].[Gender] AS [Gender], 
+    [View17andBelowMaleRankedList].[Distance] AS [Distance], 
+    [View17andBelowMaleRankedList].[Interval] AS [Interval], 
+    [View17andBelowMaleRankedList].[RANK] AS [RANK], 
+    [View17andBelowMaleRankedList].[StartTime] AS [StartTime], 
+    [View17andBelowMaleRankedList].[Email] AS [Email], 
+    [View17andBelowMaleRankedList].[EndTime] AS [EndTime], 
+    [View17andBelowMaleRankedList].[RaceId] AS [RaceId]
+    FROM [dbo].[View17andBelowMaleRankedList] AS [View17andBelowMaleRankedList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View18to39FemaleRankedList" EntityType="Self.View18to39FemaleRankedList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View18to39FemaleRankedList].[Id] AS [Id], 
+    [View18to39FemaleRankedList].[BIBCode] AS [BIBCode], 
+    [View18to39FemaleRankedList].[Name] AS [Name], 
+    [View18to39FemaleRankedList].[Age] AS [Age], 
+    [View18to39FemaleRankedList].[Gender] AS [Gender], 
+    [View18to39FemaleRankedList].[Distance] AS [Distance], 
+    [View18to39FemaleRankedList].[Interval] AS [Interval], 
+    [View18to39FemaleRankedList].[RANK] AS [RANK], 
+    [View18to39FemaleRankedList].[StartTime] AS [StartTime], 
+    [View18to39FemaleRankedList].[Email] AS [Email], 
+    [View18to39FemaleRankedList].[EndTime] AS [EndTime], 
+    [View18to39FemaleRankedList].[RaceId] AS [RaceId]
+    FROM [dbo].[View18to39FemaleRankedList] AS [View18to39FemaleRankedList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View18to39MaleRankedList" EntityType="Self.View18to39MaleRankedList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View18to39MaleRankedList].[Id] AS [Id], 
+    [View18to39MaleRankedList].[BIBCode] AS [BIBCode], 
+    [View18to39MaleRankedList].[Name] AS [Name], 
+    [View18to39MaleRankedList].[Age] AS [Age], 
+    [View18to39MaleRankedList].[Gender] AS [Gender], 
+    [View18to39MaleRankedList].[Distance] AS [Distance], 
+    [View18to39MaleRankedList].[Interval] AS [Interval], 
+    [View18to39MaleRankedList].[RANK] AS [RANK], 
+    [View18to39MaleRankedList].[StartTime] AS [StartTime], 
+    [View18to39MaleRankedList].[Email] AS [Email], 
+    [View18to39MaleRankedList].[EndTime] AS [EndTime], 
+    [View18to39MaleRankedList].[RaceId] AS [RaceId]
+    FROM [dbo].[View18to39MaleRankedList] AS [View18to39MaleRankedList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View40andAboveFemaleRankedList" EntityType="Self.View40andAboveFemaleRankedList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View40andAboveFemaleRankedList].[Id] AS [Id], 
+    [View40andAboveFemaleRankedList].[BIBCode] AS [BIBCode], 
+    [View40andAboveFemaleRankedList].[Name] AS [Name], 
+    [View40andAboveFemaleRankedList].[Age] AS [Age], 
+    [View40andAboveFemaleRankedList].[Gender] AS [Gender], 
+    [View40andAboveFemaleRankedList].[Distance] AS [Distance], 
+    [View40andAboveFemaleRankedList].[Interval] AS [Interval], 
+    [View40andAboveFemaleRankedList].[RANK] AS [RANK], 
+    [View40andAboveFemaleRankedList].[StartTime] AS [StartTime], 
+    [View40andAboveFemaleRankedList].[Email] AS [Email], 
+    [View40andAboveFemaleRankedList].[EndTime] AS [EndTime], 
+    [View40andAboveFemaleRankedList].[RaceId] AS [RaceId]
+    FROM [dbo].[View40andAboveFemaleRankedList] AS [View40andAboveFemaleRankedList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View40andAboveMaleRankedList" EntityType="Self.View40andAboveMaleRankedList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View40andAboveMaleRankedList].[Id] AS [Id], 
+    [View40andAboveMaleRankedList].[BIBCode] AS [BIBCode], 
+    [View40andAboveMaleRankedList].[Name] AS [Name], 
+    [View40andAboveMaleRankedList].[Age] AS [Age], 
+    [View40andAboveMaleRankedList].[Gender] AS [Gender], 
+    [View40andAboveMaleRankedList].[Distance] AS [Distance], 
+    [View40andAboveMaleRankedList].[Interval] AS [Interval], 
+    [View40andAboveMaleRankedList].[RANK] AS [RANK], 
+    [View40andAboveMaleRankedList].[StartTime] AS [StartTime], 
+    [View40andAboveMaleRankedList].[Email] AS [Email], 
+    [View40andAboveMaleRankedList].[EndTime] AS [EndTime], 
+    [View40andAboveMaleRankedList].[RaceId] AS [RaceId]
+    FROM [dbo].[View40andAboveMaleRankedList] AS [View40andAboveMaleRankedList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View8andBelowFemaleRankedList" EntityType="Self.View8andBelowFemaleRankedList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View8andBelowFemaleRankedList].[Id] AS [Id], 
+    [View8andBelowFemaleRankedList].[BIBCode] AS [BIBCode], 
+    [View8andBelowFemaleRankedList].[Name] AS [Name], 
+    [View8andBelowFemaleRankedList].[Age] AS [Age], 
+    [View8andBelowFemaleRankedList].[Gender] AS [Gender], 
+    [View8andBelowFemaleRankedList].[Distance] AS [Distance], 
+    [View8andBelowFemaleRankedList].[Interval] AS [Interval], 
+    [View8andBelowFemaleRankedList].[RANK] AS [RANK], 
+    [View8andBelowFemaleRankedList].[StartTime] AS [StartTime], 
+    [View8andBelowFemaleRankedList].[Email] AS [Email], 
+    [View8andBelowFemaleRankedList].[EndTime] AS [EndTime], 
+    [View8andBelowFemaleRankedList].[RaceId] AS [RaceId]
+    FROM [dbo].[View8andBelowFemaleRankedList] AS [View8andBelowFemaleRankedList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View8andBelowMaleRankedList" EntityType="Self.View8andBelowMaleRankedList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View8andBelowMaleRankedList].[Id] AS [Id], 
+    [View8andBelowMaleRankedList].[BIBCode] AS [BIBCode], 
+    [View8andBelowMaleRankedList].[Name] AS [Name], 
+    [View8andBelowMaleRankedList].[Age] AS [Age], 
+    [View8andBelowMaleRankedList].[Gender] AS [Gender], 
+    [View8andBelowMaleRankedList].[Distance] AS [Distance], 
+    [View8andBelowMaleRankedList].[Interval] AS [Interval], 
+    [View8andBelowMaleRankedList].[RANK] AS [RANK], 
+    [View8andBelowMaleRankedList].[StartTime] AS [StartTime], 
+    [View8andBelowMaleRankedList].[Email] AS [Email], 
+    [View8andBelowMaleRankedList].[EndTime] AS [EndTime], 
+    [View8andBelowMaleRankedList].[RaceId] AS [RaceId]
+    FROM [dbo].[View8andBelowMaleRankedList] AS [View8andBelowMaleRankedList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewOverAllFemaleRankedList" EntityType="Self.ViewOverAllFemaleRankedList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ViewOverAllFemaleRankedList].[Id] AS [Id], 
+    [ViewOverAllFemaleRankedList].[BIBCode] AS [BIBCode], 
+    [ViewOverAllFemaleRankedList].[Name] AS [Name], 
+    [ViewOverAllFemaleRankedList].[Age] AS [Age], 
+    [ViewOverAllFemaleRankedList].[Gender] AS [Gender], 
+    [ViewOverAllFemaleRankedList].[Distance] AS [Distance], 
+    [ViewOverAllFemaleRankedList].[Interval] AS [Interval], 
+    [ViewOverAllFemaleRankedList].[RANK] AS [RANK], 
+    [ViewOverAllFemaleRankedList].[StartTime] AS [StartTime], 
+    [ViewOverAllFemaleRankedList].[Email] AS [Email], 
+    [ViewOverAllFemaleRankedList].[EndTime] AS [EndTime], 
+    [ViewOverAllFemaleRankedList].[RaceId] AS [RaceId]
+    FROM [dbo].[ViewOverAllFemaleRankedList] AS [ViewOverAllFemaleRankedList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewOverAllMaleRankedList" EntityType="Self.ViewOverAllMaleRankedList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ViewOverAllMaleRankedList].[Id] AS [Id], 
+    [ViewOverAllMaleRankedList].[BIBCode] AS [BIBCode], 
+    [ViewOverAllMaleRankedList].[Name] AS [Name], 
+    [ViewOverAllMaleRankedList].[Age] AS [Age], 
+    [ViewOverAllMaleRankedList].[Gender] AS [Gender], 
+    [ViewOverAllMaleRankedList].[Distance] AS [Distance], 
+    [ViewOverAllMaleRankedList].[Interval] AS [Interval], 
+    [ViewOverAllMaleRankedList].[RANK] AS [RANK], 
+    [ViewOverAllMaleRankedList].[StartTime] AS [StartTime], 
+    [ViewOverAllMaleRankedList].[Email] AS [Email], 
+    [ViewOverAllMaleRankedList].[EndTime] AS [EndTime], 
+    [ViewOverAllMaleRankedList].[RaceId] AS [RaceId]
+    FROM [dbo].[ViewOverAllMaleRankedList] AS [ViewOverAllMaleRankedList]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

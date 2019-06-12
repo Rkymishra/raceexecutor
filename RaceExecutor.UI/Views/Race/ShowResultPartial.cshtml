@@ -1,0 +1,141 @@
+﻿@model RaceExecutor.UI.Models.DisplayAllListDataViewModel
+<div class="row">
+    <h4><b><hr />MALE</b></h4>
+    <table class="table table-striped table-bordered white-box">
+        <thead>
+            <tr>
+                <th>11 and Below</th>
+                <th>12 to 17</th>
+                <th>17 and Below</th>
+                <th>18 to 39</th>
+                <th>40 and Above</th>
+                <th>8 and Below</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @foreach (var a in Model.Display11andBelowMaleRankedDataViewModel)
+                    {
+                        <li style=" padding:20px;">
+                            @a.RANK . @a.Name &nbsp;<strong>in @a.Interval.ToString() &nbsp;(@a.BIBCode)</strong>
+                        </li>
+                    }
+                </td>
+                <td>
+                    @foreach (var b in Model.Display12to17MaleRankedDataViewModel)
+                    {
+                        <li style=" padding:20px;">
+                            @b.RANK . @b.Name &nbsp;<strong>in @b.Interval.ToString() &nbsp;(@b.BIBCode)</strong>
+                        </li>
+                    }
+                </td>
+                <td>
+                    @foreach (var item1 in Model.Display17andBelowMaleRankedData)
+                    {
+                        <li style=" padding:20px;">
+                            @item1.RANK . @item1.Name &nbsp;<strong>in @item1.Interval.ToString() &nbsp;(@item1.BIBCode)</strong>
+                        </li>
+                    }
+                </td>
+                <td>
+                    @foreach (var item2 in Model.Display18to39MaleRankedData)
+                    {
+                        <li style=" padding:20px;">
+                            @item2.RANK . @item2.Name &nbsp;<strong>in @item2.Interval.ToString() &nbsp;(@item2.BIBCode)</strong>
+                        </li>
+                    }
+                </td>
+                <td>
+                    @foreach (var item3 in Model.Display40andAboveMaleRankedData)
+                    {
+                        <li style=" padding:20px;">
+                            @item3.RANK . @item3.Name &nbsp;<strong>in @item3.Interval.ToString() &nbsp;(@item3.BIBCode)</strong>
+                        </li>
+                    }
+                </td>
+                <td>
+                    @foreach (var item in Model.Display8andBelowMaleRankedData)
+                    {
+                        <li>
+                            @item.RANK . @item.Name &nbsp;<strong>
+                                in @item.Interval.ToString() &nbsp;(@item.BIBCode)
+                            </strong>
+                        </li>
+                    }
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+<div class="row">
+    <h4><b>FEMALE</b></h4>
+    <table class="table table-striped table-bordered white-box">
+        <thead>
+            <tr>
+                <th>11 and Below</th>
+                <th>12 to 17</th>
+                <th>17 and Below</th>
+                <th>18 to 39</th>
+                <th>40 and Above</th>
+                <th>8 and Below</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @foreach (var a in Model.Display11andBelowFemaleRankedDataViewModel)
+                    {
+                        <li style=" padding:20px;">
+                            @a.RANK . @a.Name &nbsp;<strong>in @a.Interval.ToString() &nbsp;(@a.BIBCode)</strong>
+                        </li>
+                    }
+                </td>
+                <td>
+                    @foreach (var b in Model.Display12to17FemaleRankedDataViewModel)
+                    {
+                        <li style=" padding:20px;">
+                            @b.RANK . @b.Name &nbsp;<strong>in @b.Interval.ToString() &nbsp;(@b.BIBCode)</strong>
+                        </li>
+                    }
+                </td>
+                <td>
+                    @foreach (var item1 in Model.Display17andBelowFemaleRankedData)
+                    {
+
+
+                        <li style=" padding:20px;">
+                            @item1.RANK . @item1.Name &nbsp;<strong>in @item1.Interval &nbsp;(@item1.BIBCode)</strong>
+                        </li>
+
+                    }
+                </td>
+                <td>
+
+                    @foreach (var item2 in Model.Display18to39FemaleRankedData)
+                    {
+                        <li style=" padding:20px;">
+                            @item2.RANK . @item2.Name &nbsp;<strong>in @item2.Interval &nbsp;(@item2.BIBCode)</strong>
+                        </li>
+                    }
+                </td>
+                <td>
+                    @foreach (var item3 in Model.Display40andAboveFemaleRankedData)
+                    {
+                        <li style=" padding:20px;">
+                            @item3.RANK . @item3.Name &nbsp;<strong>in @item3.Interval &nbsp;(@item3.BIBCode)</strong>
+                        </li>
+                    }
+                </td>
+                <td>
+                    @foreach (var item in Model.Display8andBelowFemaleRankedData)
+                    {
+                        <li>@item.RANK . @item.Name &nbsp;<strong>in @item.Interval &nbsp;(@item.BIBCode)</strong> </li>
+                    }
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f343531b86e74b63b27496539e736538" Name="Diagram1">
+        <EntityTypeShape EntityType="TrailRaceNepalModel.CheckPost" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.CheckStation" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.Race" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.Register" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.Station" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.TimeInterval" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.View17andBelowFemaleRankedList" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.View17andBelowMaleRankedList" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.View18to39FemaleRankedList" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.View18to39MaleRankedList" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.View40andAboveFemaleRankedList" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.View40andAboveMaleRankedList" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.View8andBelowFemaleRankedList" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.View8andBelowMaleRankedList" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.ViewOverAllFemaleRankedList" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.ViewOverAllMaleRankedList" Width="1.5" PointX="6.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.View11andBelowFemaleRankedList" Width="1.5" PointX="9.375" PointY="10.75" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.View11andBelowMaleRankedList" Width="1.5" PointX="11.375" PointY="10.75" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.View12to17FemaleRankedList" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="TrailRaceNepalModel.View12to17MaleRankedList" Width="1.5" PointX="13.375" PointY="5.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

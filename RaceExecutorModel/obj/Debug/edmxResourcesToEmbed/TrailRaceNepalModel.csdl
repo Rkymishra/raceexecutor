@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TrailRaceNepalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CheckPost">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BIBCode" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CheckStation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BIBCode" Type="Int32" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="Station" Type="Int64" />
+    <Property Name="StationName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Race">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RaceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Sponsers" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Register">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BIBCode" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="RaceId" Type="Int64" />
+    <Property Name="Nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SeasonPass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TeamName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AgeOnRaceDay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Station">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StationName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TimeInterval">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BIBCode" Type="Int64" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="Interval" Type="Time" Precision="7" />
+    <Property Name="Rank" Type="Int32" />
+    <Property Name="RaceId" Type="Int64" />
+  </EntityType>
+  <EntityType Name="View17andBelowFemaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BIBCode" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="Interval" Type="Time" Precision="7" />
+    <Property Name="RANK" Type="Int64" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="RaceId" Type="Int64" />
+  </EntityType>
+  <EntityType Name="View17andBelowMaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BIBCode" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="Interval" Type="Time" Precision="7" />
+    <Property Name="RANK" Type="Int64" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="RaceId" Type="Int64" />
+  </EntityType>
+  <EntityType Name="View18to39FemaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BIBCode" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="Interval" Type="Time" Precision="7" />
+    <Property Name="RANK" Type="Int64" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="RaceId" Type="Int64" />
+  </EntityType>
+  <EntityType Name="View18to39MaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BIBCode" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="Interval" Type="Time" Precision="7" />
+    <Property Name="RANK" Type="Int64" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="RaceId" Type="Int64" />
+  </EntityType>
+  <EntityType Name="View40andAboveFemaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BIBCode" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="Interval" Type="Time" Precision="7" />
+    <Property Name="RANK" Type="Int64" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="RaceId" Type="Int64" />
+  </EntityType>
+  <EntityType Name="View40andAboveMaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BIBCode" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="Interval" Type="Time" Precision="7" />
+    <Property Name="RANK" Type="Int64" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="RaceId" Type="Int64" />
+  </EntityType>
+  <EntityType Name="View8andBelowFemaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BIBCode" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="Interval" Type="Time" Precision="7" />
+    <Property Name="RANK" Type="Int64" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="RaceId" Type="Int64" />
+  </EntityType>
+  <EntityType Name="View8andBelowMaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BIBCode" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="Interval" Type="Time" Precision="7" />
+    <Property Name="RANK" Type="Int64" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="RaceId" Type="Int64" />
+  </EntityType>
+  <EntityType Name="ViewOverAllFemaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BIBCode" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="Interval" Type="Time" Precision="7" />
+    <Property Name="RANK" Type="Int64" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="RaceId" Type="Int64" />
+  </EntityType>
+  <EntityType Name="ViewOverAllMaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BIBCode" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="Interval" Type="Time" Precision="7" />
+    <Property Name="RANK" Type="Int64" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="RaceId" Type="Int64" />
+  </EntityType>
+  <EntityContainer Name="TrailRaceNepalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CheckPosts" EntityType="Self.CheckPost" />
+    <EntitySet Name="CheckStations" EntityType="Self.CheckStation" />
+    <EntitySet Name="Races" EntityType="Self.Race" />
+    <EntitySet Name="Registers" EntityType="Self.Register" />
+    <EntitySet Name="Stations" EntityType="Self.Station" />
+    <EntitySet Name="TimeIntervals" EntityType="Self.TimeInterval" />
+    <EntitySet Name="View17andBelowFemaleRankedList" EntityType="Self.View17andBelowFemaleRankedList" />
+    <EntitySet Name="View17andBelowMaleRankedList" EntityType="Self.View17andBelowMaleRankedList" />
+    <EntitySet Name="View18to39FemaleRankedList" EntityType="Self.View18to39FemaleRankedList" />
+    <EntitySet Name="View18to39MaleRankedList" EntityType="Self.View18to39MaleRankedList" />
+    <EntitySet Name="View40andAboveFemaleRankedList" EntityType="Self.View40andAboveFemaleRankedList" />
+    <EntitySet Name="View40andAboveMaleRankedList" EntityType="Self.View40andAboveMaleRankedList" />
+    <EntitySet Name="View8andBelowFemaleRankedList" EntityType="Self.View8andBelowFemaleRankedList" />
+    <EntitySet Name="View8andBelowMaleRankedList" EntityType="Self.View8andBelowMaleRankedList" />
+    <EntitySet Name="ViewOverAllFemaleRankedLists" EntityType="Self.ViewOverAllFemaleRankedList" />
+    <EntitySet Name="ViewOverAllMaleRankedLists" EntityType="Self.ViewOverAllMaleRankedList" />
+    <FunctionImport Name="SpMissedRunnersCheckinSel" ReturnType="Collection(String)">
+      <Parameter Name="RaceId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SpTimeIntervalIns">
+      <Parameter Name="RaceId" Mode="In" Type="Int64" />
+      <Parameter Name="StartTime" Mode="In" Type="DateTime" />
+      <Parameter Name="EndTime" Mode="In" Type="DateTime" />
+      <Parameter Name="Interval" Mode="In" Type="Time" />
+      <Parameter Name="BIBCode" Mode="In" Type="Int64" />
+      <Parameter Name="ReturnMessage" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="View11andBelowFemaleRankedList" EntityType="TrailRaceNepalModel.View11andBelowFemaleRankedList" />
+    <EntitySet Name="View11andBelowMaleRankedList" EntityType="TrailRaceNepalModel.View11andBelowMaleRankedList" />
+    <EntitySet Name="View12to17FemaleRankedList" EntityType="TrailRaceNepalModel.View12to17FemaleRankedList" />
+    <EntitySet Name="View12to17MaleRankedList" EntityType="TrailRaceNepalModel.View12to17MaleRankedList" />
+  </EntityContainer>
+  <EntityType Name="View11andBelowFemaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BIBCode" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="Interval" Type="Time" Precision="7" />
+    <Property Name="RANK" Type="Int64" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="RaceId" Type="Int64" />
+  </EntityType>
+  <EntityType Name="View11andBelowMaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BIBCode" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="Interval" Type="Time" Precision="7" />
+    <Property Name="RANK" Type="Int64" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="RaceId" Type="Int64" />
+  </EntityType>
+  <EntityType Name="View12to17FemaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BIBCode" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="Interval" Type="Time" Precision="7" />
+    <Property Name="RANK" Type="Int64" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="RaceId" Type="Int64" />
+  </EntityType>
+  <EntityType Name="View12to17MaleRankedList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BIBCode" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="Interval" Type="Time" Precision="7" />
+    <Property Name="RANK" Type="Int64" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="RaceId" Type="Int64" />
+  </EntityType>
+</Schema>

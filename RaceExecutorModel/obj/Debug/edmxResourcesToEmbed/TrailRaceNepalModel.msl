@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TrailRaceNepalModelStoreContainer" CdmEntityContainer="TrailRaceNepalEntities">
+    <EntitySetMapping Name="CheckPosts">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.CheckPost">
+        <MappingFragment StoreEntitySet="CheckPost">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CheckStations">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.CheckStation">
+        <MappingFragment StoreEntitySet="CheckStation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Station" ColumnName="Station" />
+          <ScalarProperty Name="StationName" ColumnName="StationName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Races">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.Race">
+        <MappingFragment StoreEntitySet="Races">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RaceName" ColumnName="RaceName" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Sponsers" ColumnName="Sponsers" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registers">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.Register">
+        <MappingFragment StoreEntitySet="Register">
+          <ScalarProperty Name="CategoryImage" ColumnName="CategoryImage" />
+          <ScalarProperty Name="Gender_Image" ColumnName="Gender_Image" />
+          <ScalarProperty Name="AgeOnRaceDay" ColumnName="AgeOnRaceDay" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="SeasonPass" ColumnName="SeasonPass" />
+          <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stations">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.Station">
+        <MappingFragment StoreEntitySet="Stations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StationName" ColumnName="StationName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeIntervals">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.TimeInterval">
+        <MappingFragment StoreEntitySet="TimeInterval">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View17andBelowFemaleRankedList">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.View17andBelowFemaleRankedList">
+        <MappingFragment StoreEntitySet="View17andBelowFemaleRankedList">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="RANK" ColumnName="RANK" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View17andBelowMaleRankedList">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.View17andBelowMaleRankedList">
+        <MappingFragment StoreEntitySet="View17andBelowMaleRankedList">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="RANK" ColumnName="RANK" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View18to39FemaleRankedList">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.View18to39FemaleRankedList">
+        <MappingFragment StoreEntitySet="View18to39FemaleRankedList">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="RANK" ColumnName="RANK" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View18to39MaleRankedList">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.View18to39MaleRankedList">
+        <MappingFragment StoreEntitySet="View18to39MaleRankedList">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="RANK" ColumnName="RANK" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View40andAboveFemaleRankedList">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.View40andAboveFemaleRankedList">
+        <MappingFragment StoreEntitySet="View40andAboveFemaleRankedList">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="RANK" ColumnName="RANK" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View40andAboveMaleRankedList">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.View40andAboveMaleRankedList">
+        <MappingFragment StoreEntitySet="View40andAboveMaleRankedList">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="RANK" ColumnName="RANK" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View8andBelowFemaleRankedList">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.View8andBelowFemaleRankedList">
+        <MappingFragment StoreEntitySet="View8andBelowFemaleRankedList">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="RANK" ColumnName="RANK" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View8andBelowMaleRankedList">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.View8andBelowMaleRankedList">
+        <MappingFragment StoreEntitySet="View8andBelowMaleRankedList">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="RANK" ColumnName="RANK" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewOverAllFemaleRankedLists">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.ViewOverAllFemaleRankedList">
+        <MappingFragment StoreEntitySet="ViewOverAllFemaleRankedList">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="RANK" ColumnName="RANK" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewOverAllMaleRankedLists">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.ViewOverAllMaleRankedList">
+        <MappingFragment StoreEntitySet="ViewOverAllMaleRankedList">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="RANK" ColumnName="RANK" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SpMissedRunnersCheckinSel" FunctionName="TrailRaceNepalModel.Store.SpMissedRunnersCheckinSel" />
+    <FunctionImportMapping FunctionImportName="SpTimeIntervalIns" FunctionName="TrailRaceNepalModel.Store.SpTimeIntervalIns" />
+    <EntitySetMapping Name="View11andBelowFemaleRankedList">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.View11andBelowFemaleRankedList">
+        <MappingFragment StoreEntitySet="View11andBelowFemaleRankedList">
+          <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="RANK" ColumnName="RANK" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View11andBelowMaleRankedList">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.View11andBelowMaleRankedList">
+        <MappingFragment StoreEntitySet="View11andBelowMaleRankedList">
+          <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="RANK" ColumnName="RANK" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View12to17FemaleRankedList">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.View12to17FemaleRankedList">
+        <MappingFragment StoreEntitySet="View12to17FemaleRankedList">
+          <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="RANK" ColumnName="RANK" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View12to17MaleRankedList">
+      <EntityTypeMapping TypeName="TrailRaceNepalModel.View12to17MaleRankedList">
+        <MappingFragment StoreEntitySet="View12to17MaleRankedList">
+          <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="RANK" ColumnName="RANK" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BIBCode" ColumnName="BIBCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

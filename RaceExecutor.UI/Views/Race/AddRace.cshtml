@@ -1,0 +1,97 @@
+﻿@model RaceExecutorModel.Race
+
+@{
+    ViewBag.Title = "CreateRace";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row bg-title">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h4 class="page-title">Add Run</h4>
+    </div>
+    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+        <a href="#" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">
+            Add NEW-Race
+        </a>
+        <ol class="breadcrumb">
+            <li><a href="#">Trail Race</a></li>
+            <li class="active">Run List</li>
+        </ol>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<div class="row bg-title white-box">
+
+    @using (Html.BeginForm("AddRace", "Race", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group" style="margin-top:20px;">
+                <div class="editor-label  col-md-3 control-label">
+                    <strong style="font-size:small;"> Race Name:</strong>
+                </div>
+                <div class="editor-field col-md-8">
+                    @Html.EditorFor(model => model.RaceName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Race Name.." } })
+                    @Html.ValidationMessageFor(model => model.RaceName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top:20px;">
+                <div class="editor-label  col-md-3 control-label">
+                    <strong style="font-size:small;"> Create Date:</strong>
+                </div>
+                <div class="editor-field col-md-8">
+                    @Html.EditorFor(model => model.CreateDate, new { htmlAttributes = new { @Id = "datepicker", @class = "form-control", @placeholder = "Race date.." } })
+                    @Html.ValidationMessageFor(model => model.CreateDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top:20px;">
+                <div class="editor-label  col-md-3 control-label">
+                    <strong style="font-size:small;"> Location:</strong>
+                </div>
+                <div class="editor-field col-md-8">
+                    @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Location.." } })
+                    @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top:20px;">
+                <div class="editor-label  col-md-3 control-label">
+                    <strong style="font-size:small;"> Sponsers:</strong>
+                </div>
+                <div class="editor-field col-md-8">
+                    @Html.EditorFor(model => model.Sponsers, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter the Sponsers" } })
+                    @Html.ValidationMessageFor(model => model.Sponsers, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top:20px;">
+                <div class="editor-label  col-md-3 control-label">
+                    <strong style="font-size:small;"> Comment:</strong>
+                </div>
+                <div class="editor-field col-md-8">
+                    @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control", @placeholder = "Comments(Optionals..)" } })
+                    @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-3 col-md-8">
+                    <input type="submit" value="Add Run" class="btn btn-primary btn-block" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>
+<script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+</script>

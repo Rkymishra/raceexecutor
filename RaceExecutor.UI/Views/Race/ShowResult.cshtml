@@ -1,0 +1,182 @@
+﻿@model RaceExecutor.UI.Models.DisplayAllListDataViewModel
+@{
+    ViewBag.Title = "ShowResult";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <title>Race-Result</title>
+    <link href="~/Externals/Themes/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Externals/Themes/css/animate.css" rel="stylesheet">
+    <link href="~/Externals/Themes/css/style.css" rel="stylesheet">
+    <link href="~/Externals/Themes/css/colors/default.css" id="theme" rel="stylesheet">
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+
+</head>
+<body class="fix-header">
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+                <div class="top-left-part">
+                    <a class="logo" href="@Url.Action("Registered", "Race")">
+                        <b>
+                            <img src="~/Externals/Themes/images/admin-logo.png" class="dark-logo" />
+                            <img src="~/Externals/Themes/images/admin-logo-dark.png" class="light-logo" />
+                        </b>
+                        <span class="hidden-xs">
+                            <img src="~/Externals/Themes/images/admin-text.png" class="dark-logo" />
+                            <img src="~/Externals/Themes/images/admin-text-dark.png" alt="home" class="light-logo" />
+                        </span>
+                    </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li>
+                        <form role="search" class="app-search hidden-sm hidden-xs m-r-10">
+                            <input type="text" placeholder="Search..." class="form-control">
+                            <a href=""><i class="fa fa-search"></i></a>
+                        </form>
+                    </li>
+                </ul>
+                @*<li>
+                        <a class="profile-pic" href="#">
+                            <img src="~/Externals/Themes/images/john.jpg" alt="user-img" width="36" class="img-circle">
+                            <b class="hidden-xs">Steave</b>
+                        </a>
+                    </li>*@
+            </div>
+        </nav>
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav slimscrollsidebar">
+                <div class="sidebar-head">
+                    <h3>
+                        <span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span>
+                        <span class="hide-menu">Navigation</span>
+                    </h3>
+                </div>
+                <ul class="nav" id="side-menu">
+                    <li style="padding: 70px 0 0;">
+                        <a href="@Url.Action("AddRace","Race")" class="waves-effect">
+                            <i class="fa fa-bicycle fa-fw" aria-hidden="true"></i>Create Race
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("RegisterRunner","Race")" class="waves-effect">
+                            <i class="fa fa-user fa-fw" aria-hidden="true"></i>Register
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Registered","Race")" class="waves-effect">
+                            <i class="fa fa-globe fa-fw" aria-hidden="true"></i>Runners
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Create","Race")" class="waves-effect">
+                            <i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Check Post
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("ShowResult","Race")" class="waves-effect">
+                            <i class="fa fa-bookmark-o fa-fw" aria-hidden="true"></i>Race-Result
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index","Race")" class="waves-effect">
+                            <i class="fa fa-users fa-fw" aria-hidden="true"></i>OverAll-Ranking
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("RankCategoryWiseForm","Race")" class="waves-effect">
+                            <i class="fa fa-area-chart fa-fw" aria-hidden="true"></i>Report
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="center p-20">
+                    <a href="#"
+                       class="btn btn-danger btn-block waves-effect waves-light">
+                        TRAIL RACE
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Ranking List</h4>
+                    </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                        <a href="#" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">
+                            Race Result
+
+                        </a>
+                        <ol class="breadcrumb">
+                            <li><a href="#">Trail Race</a></li>
+                            <li class="active">Race Results</li>
+                        </ol>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                @{
+                    var sn = 0;
+                    foreach (var item in Model.Distance)
+                    {
+                         <h2>@item.GetValueOrDefault() KM</h2>
+                        <div class="row white-box">
+                            @{Html.RenderAction("ShowResultPartial", "Race", new { Distance = item.GetValueOrDefault()}); }
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/Externals/Themes/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/Externals/Themes/New/js/sidebar-nav.min.js"></script>
+    <script src="~/Externals/Themes/js/jquery.slimscroll.js"></script>
+    <script src="~/Externals/Themes/js/waves.js"></script>
+    <script src="~/Externals/Themes/js/custom.min.js"></script>
+    <script src="~/Externals/Themes/New/js/jquery.dataTables.min.js"></script>
+    <script src="~/Externals/Themes/New/js/jszip.min.js"></script>
+    <script src="~/Externals/Themes/New/js/vfs_fonts.js"></script>
+    <script src="~/Externals/Themes/New/js/buttons.html5.min.js"></script>
+    <script src="~/Externals/Themes/New/js/buttons.print.min.js"></script>
+</body>
+</html>
+
+
+<style>
+    table, td, th {
+        border: 1px solid #ddd;
+    }
+
+    table {
+        border-collapse: collapse;
+        position: center;
+        width: 100%;
+    }
+
+    th {
+        padding: 8px;
+        color: black;
+    }
+
+    td {
+        font-size: small;
+    }
+
+    td, li {
+        list-style-type: none;
+    }
+</style>

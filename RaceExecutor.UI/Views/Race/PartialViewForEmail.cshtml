@@ -1,0 +1,42 @@
+﻿@model RaceExecutor.UI.Models.UltraTrailRaceViewModel
+
+<h2>Dear, @ViewBag.Runnername</h2><br />
+<h3>Here we sent your race detail!</h3>
+<h3 style="margin-top:50px;margin-bottom:20px;">Details,</h3>
+<table data-max='30'class='table table-bordered table-hover table-responsive' style="font-size:small;
+overflow-x:auto;
+Width:100%; 
+text-align:center;">
+    <tr  Style="background-color:#1caf9a;">
+        <th>BIB</th>
+        <th>Gender</th>
+        <th>Category</th>
+        <th>Distance</th>
+        <th>End Time</th>
+        <th>Duration</th>
+        </tr>
+    <tr>
+        <td>@Model.BIBCode</td>
+        <td>@ViewBag.Gender</td>
+        <td>@ViewBag.Age</td>
+        <td>@ViewBag.Distance</td>
+        <td>@ViewBag.EndTime</td>
+        <td>@ViewBag.interval</td>
+    </tr>
+        </table>
+<div style="margin-top:40px;">
+<b style='color: #2B2B26; font-size:small;'>Regards: </b>
+<b style='color: #2B2B26;font-size:small;'>@ViewBag.Name</b>
+<br/><b style='color: #2B2B26;font-size:small;'>Trail Running Nepal<br/> Held on, @ViewBag.Date <br />Kathmandu, Nepal</b>
+</div>
+
+<style>
+    .th{
+        color:white;
+    }
+
+    .td {
+        text-align:center;
+        color:black;
+    }
+</style>

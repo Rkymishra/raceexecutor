@@ -1,0 +1,29 @@
+﻿@model RaceExecutor.UI.Models.CategoryWiseRankingViewModel
+
+@{
+    ViewBag.Title = "DateWiseListFilter";
+    Layout = null;
+}
+
+
+@using (Html.BeginForm("DateWiseListFilterShowingView", "Race", FormMethod.Post, new { id = "yourFormId", area = "", @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+<div class="form-group" style="margin-top:20px;">
+    <div class="editor-label  col-md-3 control-label">
+        <strong style="font-size:small;"> Select Date:</strong>
+    </div>
+    <div class="editor-field col-md-3">
+        @Html.TextBoxFor(m => m.Date, new { id = "datepicker", @class = "form-control", placeholder = "Choose one date..", required = "required" })
+        @Html.ValidationMessageFor(model => model.Date)
+    </div>
+    <button type="submit" class="btn btn-info">Submit</button>
+</div>
+   
+
+}
+
+ 
+

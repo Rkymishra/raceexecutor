@@ -1,0 +1,140 @@
+﻿@model RaceExecutor.UI.Models.UltraTrailRaceViewModel
+
+@{
+    ViewBag.Title = "CheckPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row bg-title">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h4 class="page-title">BIB-Entry</h4>
+    </div>
+    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+        <a href="#" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">
+            Check Post
+        </a>
+        <ol class="breadcrumb">
+            <li><a href="#">Trail Race</a></li>
+            <li class="active">BIB-Entry</li>
+        </ol>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+@if (TempData["Fail"] != null)
+{
+    <p class="alert alert-danger" style="color:white;" id="failMessage">@TempData["Fail"]</p>
+}
+
+<div class="col-md-12">
+    @*<h3 class="box-title">BIB-ENTRY</h3>
+        <p class="text-muted">Add class <code>.table</code></p>*@
+    <div class="col-md-6 white-box col-sm-12">
+        @using (Html.BeginForm("Create", "Race", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal" }))
+        {
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                <div class="editor-label  col-md-2 control-label">
+                    <strong style="font-size:small;">BIB Code</strong>
+                </div>
+                <div class="editor-field col-md-10">
+                    @Html.TextBoxFor(model => model.BIBCode, new { @placeholder = "Enter the valid BIB Code", required = "required", style = "width:300px; background-color:white;", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.BIBCode)
+                </div>
+            </div>
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" value="submit" class="btn btn-primary " onclick="submitdata(event)">Submit</button>
+            </div>
+        }
+    </div>
+    @*  <div class="col-md-offset-1 col-md-5 white-box col-sm-12">
+
+            @using (Html.BeginForm("AddRunners", "Race", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal" }))
+            {
+                @Html.ValidationSummary(true)
+
+                <div class="form-group">
+                    <div class="editor-label  col-md-2 control-label">
+                        <strong style="font-size:small;">New BIB Code</strong>
+                    </div>
+                    <div class="editor-field col-md-10">
+                        @Html.TextBoxFor(model => model.BIBCode, new { @placeholder = "Enter the New BIB Code", required = "required", style = "width:300px; background-color:white;", @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.BIBCode)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="editor-label  col-md-2 control-label">
+                        <strong style="font-size:small;">Start Time</strong>
+                    </div>
+                    <div class="editor-field col-md-10">
+                        @Html.DropDownListFor(model => model.StartTime, Model.listStartTime, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.StartTime)
+                    </div>
+                </div>
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" value="submit" class="btn btn-primary ">Submit</button>
+                </div>
+            }
+        </div>*@
+
+</div>
+
+
+@section Scripts {
+    <script>
+        function submitdata(event) {
+            debugger;
+            event.preventDefault();
+            var data = $('#BIBCode').val();
+            $.ajax({
+                type: 'Post',
+                url: '@Url.Action("Create","Race")',
+                data: { BIBCode: data },
+                success: function (response) {
+                    toastr.success(response, "success");
+                    $('#BIBCode').val('');
+                    $("#BIBCode").focus();
+
+
+                },
+                error: function (response) {
+                    toastr.error(response, "error");
+                  
+                }
+            });
+
+        }
+
+          function submitdata2(event) {
+           // debugger;
+            event.preventDefault();
+            var model = {
+                BIBCode: $('#BIBCode').val()
+            }          
+            $.ajax({
+                type: 'Post',
+                url: WebApiUri + '/RaceApi/GetBIBCodeAPI',
+                data: JSON.stringify(model),
+                dataType: 'JSON',
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    $('#BIBCode').val('');
+                    $("#BIBCode").focus();
+                },
+                error: function (response) {
+                    console.log(response);
+                }
+            });
+
+        }
+
+
+        setTimeout(function () {
+            $('#successMessage').fadeOut('fast');
+        }, 1000); // <-- time in milliseconds
+
+        $("#BIBCode").focus();
+
+    </script>
+}
